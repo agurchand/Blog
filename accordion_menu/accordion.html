@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+.menu_container {
+ 	width: 500px;
+}
+.menu_head {
+	background: url(images/red.png) brown;
+    color: white;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+	margin: 0 0 1px 0;
+    padding: 7px 11px;
+	font-weight: bold;
+}
+.menu_body {
+	background: lightgray;
+}
+.menu_body p{
+	padding: 5px;
+	margin: 0px;
+}
+.plusminus{
+	float:right;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".menu_body").hide();
+	//toggle the componenet with class menu_body
+	$(".menu_head").click(function(){
+		$(this).next(".menu_body").slideToggle(600); 
+		var plusmin;
+		plusmin = $(this).children(".plusminus").text();
+		
+		if( plusmin == '+')
+		$(this).children(".plusminus").text('-');
+		else
+		$(this).children(".plusminus").text('+');
+	});
+});
+</script>
+</head>
+<h1><a href="http://blog.theonlytutorials.com/simple-jquery-accordion-menu-script-ready-to-use-code/">http://blog.theonlytutorials.com - Simple jQuery Accordion Menu Script</a></h1>
+	<div class="menu_container">
+		<p class="menu_head">Lorem Ipsum<span class="plusminus">+</span></p>
+			<div class="menu_body" style="display: none;">
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+		<p class="menu_head">About Theonlytutorials.com<span class="plusminus">+</span></p>
+			<div class="menu_body" style="display: none;">
+			<p>theonlytutorials.com is providing a great varitey of tutorials and scripts to use it immediate on any project!</p>
+			</div>
+	</div>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Simple Jquery Ajax Tutorial by http://blog.theonlytutorials.com</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#city').change(function(){
+		city_id  = $('#city').val();
+		$.post('test.php',{city:city_id},function(res){
+			$("#result").html(res);
+		});
+			
+	});
+});
+</script>
+</head>
+<body>
+<h3><a href="http://blog.theonlytutorials.com/very-simple-jquery-and-php-ajax-request-ready-to-use-code/">Easy jQuery Ajax Call Script - Theonlytutorials.com</a></h3>
+<select name="city" id="city">
+	<option value="">Select</option>
+	<option value="madurai">Madurai</option>
+	<option value="bangalore">Bangalore</option>
+</select>
+<div id="result">
+</div>
+</body>
+</html>
